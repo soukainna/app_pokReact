@@ -1,10 +1,15 @@
 import React, {FunctionComponent} from "react";
+import Pokemon from '../models/pock';
 
-const PokemonCard: FunctionComponent = () => {
+type Props = {
+    pokemon: Pokemon
+};
+
+const PokemonCard: FunctionComponent<Props> = ({pokemon}) => {
 
     return(
         <div>
-            Ce composant est chargé d'afficher le pokémon : ?
+            Ce composant est chargé d'afficher le pokémon : {pokemon.name}
         </div>
     );
 }
