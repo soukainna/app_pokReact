@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from "react";
 import Pokemon from '../models/pock';
+import './pok-card.css'
 
 type Props = {
     pokemon: Pokemon
