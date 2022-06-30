@@ -3,17 +3,18 @@ import Pokemon from '../models/pock';
 import './pok-card.css'
 
 type Props = {
-    pokemon: Pokemon
+    pokemon: Pokemon,
+    borderColor?: string
 };
 
-const PokemonCard: FunctionComponent<Props> = ({pokemon}) => {
+const PokemonCard: FunctionComponent<Props> = ({pokemon, borderColor='#009688'}) => {
 
     return(
         // <div>
         //     Ce composant est chargé d'afficher le pokémon : {pokemon.name}
         // </div>
         <div className="col s6 m4">
-        <div className="card horizontal">
+        <div className="card horizontal" style={{ borderColor: borderColor }}>
           <div className="card-image"> 
             <img src={pokemon.picture} alt={pokemon.name}/>
           </div>
