@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 import Mpok from './models/mock-pock'
 import Pok from './models/pock'
 import PokList from './pages/pok-list'
+import PokDetail from './pages/pok-detail'
 
 
 const App: React.FC = () => {
@@ -51,7 +53,22 @@ const App: React.FC = () => {
 //       </div>
       
 //    </div>
-   <PokList />
+  //  <PokList />
+  <Router>
+    <div>
+      {/* la barre de la navigation */}
+      <nav>
+        <div className='nav-wrapper teal'></div>
+        <Link to="/" className="brand-logo center">Pokédex</Link>
+      </nav>
+      <Switch>
+        {/* systeme de gestion des routes de l'app */}
+        <Route exact path="/" component={PokList} />
+        <Route exact path="/pokemon" component={PokList} />
+        <Route path="/pokemon/:id" component={PokDetail} />
+      </Switch>
+    </div>
+  </Router>
   )
  }
    
