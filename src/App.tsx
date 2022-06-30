@@ -5,7 +5,7 @@ import Mpok from './models/mock-pock'
 import Pok from './models/pock'
 import PokList from './pages/pok-list'
 import PokDetail from './pages/pok-detail'
-
+import pageNotFound from './pages/page-notfound'
 
 const App: React.FC = () => {
   //const [name, setName] = useState('React');
@@ -66,6 +66,7 @@ const App: React.FC = () => {
         <Route exact path="/" component={PokList} />
         <Route exact path="/pokemon" component={PokList} />
         <Route path="/pokemon/:id" component={PokDetail} />
+        <Route component={pageNotFound} />
       </Switch>
     </div>
   </Router>
